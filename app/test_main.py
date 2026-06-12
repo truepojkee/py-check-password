@@ -2,20 +2,20 @@ from app.main import check_password
 
 
 def test_min_password_length() -> None:
-    assert check_password("Pass@11") == False
+    assert not check_password("Pass@11")
 
 
 def test_max_password_length() -> None:
-    assert check_password("P@ssword123_P@ss1") == False
+    assert not check_password("P@ssword123_P@ss1")
 
 
 def test_contains_special_characters() -> None:
-    assert check_password("Password1") == False
+    assert not check_password("Password1")
 
 
 def test_password_contains_digits() -> None:
-    assert check_password("P@ssword") == False
+    assert not check_password("P@ssword")
 
 
 def test_password_contains_uppercase() -> None:
-    assert check_password("p@ssword123_") == False
+    assert not check_password("p@ssword123_")
